@@ -13,7 +13,7 @@ sealed class Packet {
             "PASS_CARDS" to ::PassCards,
             "PLAY_CARD" to ::PlayCard,
             "INIT_GAME" to ::InitGame,
-            "INIT_TRICK" to ::InitGame,
+            "INIT_TRICK" to ::InitTrick,
             "SET_CARDS" to ::SetCards,
             "CHOOSE_CARDS" to ::ChooseCards,
             "YOUR_TURN" to ::YourTurn,
