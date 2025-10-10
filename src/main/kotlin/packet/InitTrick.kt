@@ -1,11 +1,11 @@
 package me.chriss99.packet
 
-data class InitTrick(val turnOrder: List<Int>, val scores: List<Int>) : Packet() {
-    constructor(map: Map<String, String>) : this(parseList(map["turnOrder"]!!, String::toInt), parseList(map["scores"]!!, String::toInt))
+data class InitTrick(val beginner: Int, val scores: List<Int>) : Packet() {
+    constructor(map: Map<String, String>) : this(map["beginner"]!!.toInt(), parseList(map["scores"]!!, String::toInt))
 
     override fun serialize(): String =
         """INIT_TRICK $VERSION
-          |turnOrder: ${formatList(turnOrder)}
+          |beginner: $beginner
           |scores: ${formatList(scores)}
         """.trimMargin()
 }
