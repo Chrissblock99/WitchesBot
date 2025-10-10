@@ -6,7 +6,7 @@ data class PlayCard(val card: Card) : Packet() {
     constructor(map: Map<String, String>) : this(Card.valueOf(map["card"]!!))
 
     override fun serialize(): String =
-        """REGISTER $VERSION
+        """PLAY_CARD $VERSION
           |card: ${card.name}
         """.trimMargin()
 }

@@ -4,7 +4,7 @@ data class ChooseCards(val timeLeft: Int, val passingOrder: List<Int>, val amoun
     constructor(map: Map<String, String>) : this(map["timeLeft"]!!.toInt(), parseList(map["passingOrder"]!!, String::toInt), map["amount"]!!.toInt())
 
     override fun serialize(): String =
-        """REGISTER $VERSION
+        """CHOOSE_CARDS $VERSION
           |timeLeft: $timeLeft
           |passingOrder: ${formatList(passingOrder)}
           |amount: $amount

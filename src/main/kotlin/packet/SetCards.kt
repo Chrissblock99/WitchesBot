@@ -6,7 +6,7 @@ data class SetCards(val player: String, val cards: CardSet) : Packet() {
     constructor(map: Map<String, String>) : this(map["name"]!!, CardSet(map["cards"]!!))
 
     override fun serialize(): String =
-        """REGISTER $VERSION
+        """SET_CARDS $VERSION
           |player: $player
           |cards: ${formatList(cards.list, { card -> card.name })})}
         """.trimMargin()
