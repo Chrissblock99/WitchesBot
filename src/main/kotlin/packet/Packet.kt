@@ -30,8 +30,8 @@ sealed class Packet {
                 throw IllegalArgumentException("Wrong version! Expected $VERSION, found $version")
             val packetName = splitHead[0]
 
-            val body = lines.filter { it != head }.map { it.filter { it != ' ' } }
-            val map = body.map { it.split(":") }.associate { it[0] to it[1] }
+            val body = lines.filter { it != head }
+            val map = body.map { it.split(":") }.associate { it[0].trim() to it[1].trim() }
 
             return packetMap[packetName]!!(map)
         }
