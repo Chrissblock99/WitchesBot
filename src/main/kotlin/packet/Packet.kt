@@ -17,7 +17,8 @@ sealed class Packet {
             "SET_CARDS" to ::SetCards,
             "CHOOSE_CARDS" to ::ChooseCards,
             "YOUR_TURN" to ::YourTurn,
-            "CARD_PLAYED" to ::CardPlayed
+            "CARD_PLAYED" to ::CardPlayed,
+            "QUIT" to ::Quit
         )
 
         fun parse(packet: String): Packet {

@@ -84,4 +84,13 @@ class PacketTest {
         """.trimMargin()
         assertEquals(packet, Packet.parse(packet).serialize())
     }
+
+    @Test
+    fun quit() {
+        val packet = """QUIT 1.0
+          |reason: Game ended
+          |error: false
+        """.trimMargin()
+        assertEquals(packet, Packet.parse(packet).serialize())
+    }
 }
