@@ -1,6 +1,6 @@
 package me.chriss99.lib
 
-enum class Card(color: Color, number: Int) {
+enum class Card(val color: Color, val number: Int) {
     R1(Color.RED, 1),
     R2(Color.RED, 2),
     R3(Color.RED, 3),
