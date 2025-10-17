@@ -8,6 +8,6 @@ data class SetCards(val player: String, val cards: CardSet) : Packet() {
     override fun serialize(): String =
         """SET_CARDS $VERSION
           |player: $player
-          |cards: ${formatList(cards.list, { card -> card.name })}
+          |cards: ${formatList(cards, { card -> card.name })}
         """.trimMargin()
 }

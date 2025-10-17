@@ -35,7 +35,7 @@ data class RoundState(val players: List<Player>, val cards: List<Card>, val acti
 
     companion object {
         fun randomInit(players: List<String>, beginnerIndex: Int): RoundState {
-            val cards = CardSet.ALL_CARDS.list.shuffled()
+            val cards = CardSet.ALL_CARDS.shuffled()
             val cardsPerPlayer = 60 / players.size
 
             val players = players.mapIndexed { index, name -> Player(index, name,

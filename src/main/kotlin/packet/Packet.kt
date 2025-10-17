@@ -37,7 +37,7 @@ sealed class Packet {
             return packetMap[packetName]!!(map)
         }
 
-        fun <T> formatList(list: List<T>, toString: (entry: T) -> String = Object::toString as (entry: T) -> String) =
+        fun <T> formatList(list: Collection<T>, toString: (entry: T) -> String = Object::toString as (entry: T) -> String) =
             list.fold("") { acc, s -> "$acc,${toString(s)}" }.removeRange(0..0)
 
         fun <T> parseList(list: String, parse: (string: String) -> T): List<T> =

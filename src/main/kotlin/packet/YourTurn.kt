@@ -8,6 +8,6 @@ data class YourTurn(val timeLeft: Int, val validMoves: CardSet) : Packet() {
     override fun serialize(): String =
         """YOUR_TURN $VERSION
           |timeLeft: $timeLeft
-          |validMoves: ${formatList(validMoves.list, { card -> card.name })}
+          |validMoves: ${formatList(validMoves, { card -> card.name })}
         """.trimMargin()
 }
