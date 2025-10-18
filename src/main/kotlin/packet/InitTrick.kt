@@ -6,6 +6,6 @@ data class InitTrick(val beginner: Int, val scores: List<Int>) : Packet() {
     override fun serialize(): String =
         """INIT_TRICK $VERSION
           |beginner: $beginner
-          |scores: ${formatList(scores)}
+          |scores[]: ${formatList(scores)}
         """.trimMargin()
 }

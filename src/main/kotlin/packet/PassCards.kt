@@ -7,6 +7,6 @@ data class PassCards(val cards: CardSet) : Packet() {
 
     override fun serialize(): String =
         """PASS_CARDS $VERSION
-          |cards: ${formatList(cards, { card -> card.name })}
+          |cards[]: ${formatList(cards, { card -> card.name })}
         """.trimMargin()
 }

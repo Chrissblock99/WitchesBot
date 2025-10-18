@@ -6,7 +6,7 @@ data class ChooseCards(val timeLeft: Int, val passingOrder: List<Int>, val amoun
     override fun serialize(): String =
         """CHOOSE_CARDS $VERSION
           |timeLeft: $timeLeft
-          |passingOrder: ${formatList(passingOrder)}
+          |passingOrder[]: ${formatList(passingOrder)}
           |amount: $amount
         """.trimMargin()
 }

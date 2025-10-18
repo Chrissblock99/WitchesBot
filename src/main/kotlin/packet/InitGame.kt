@@ -5,7 +5,7 @@ data class InitGame(val players: List<String>, val totalTime: Int, val timeIncre
 
     override fun serialize(): String =
         """INIT_GAME $VERSION
-          |players: ${formatList(players)}
+          |players[]: ${formatList(players)}
           |totalTime: $totalTime
           |timeIncrement: $timeIncrement
         """.trimMargin()

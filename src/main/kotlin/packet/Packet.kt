@@ -32,7 +32,7 @@ sealed class Packet {
             val packetName = splitHead[0]
 
             val body = lines.filter { it != head }
-            val map = body.map { it.split(":") }.associate { it[0].trim() to it[1].trim() }
+            val map = body.map { it.split(":") }.associate { it[0].trim().replace("[]", "") to it[1].trim() }
 
             return packetMap[packetName]!!(map)
         }
