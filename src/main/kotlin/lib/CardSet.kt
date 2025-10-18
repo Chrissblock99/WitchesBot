@@ -1,13 +1,10 @@
 package me.chriss99.lib
 
-import me.chriss99.packet.Packet
-
 class CardSet(val cards: Long) : Set<Card> {
     override fun iterator() = Card.entries.filter { it in this }.iterator()
     override val size get() = cards.countOneBits()
 
     constructor(cards: Collection<Card>) : this(cards.fold(0) { acc, card -> acc or card.indexBit })
-    constructor(cards: String) : this(Packet.parseList(cards, Card::valueOf))
 
     override fun isEmpty() = cards == 0L
 

@@ -41,6 +41,6 @@ sealed class Packet {
             list.fold("") { acc, s -> "$acc,${toString(s)}" }.removeRange(0..0)
 
         fun <T> parseList(list: String, parse: (string: String) -> T): List<T> =
-            list.split(",").map(parse)
+            list.split(",").map(String::trim).map(parse)
     }
 }
