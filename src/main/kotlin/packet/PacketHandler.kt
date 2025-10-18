@@ -25,6 +25,7 @@ class PacketHandler {
                 Packet.parse(input)
             } catch (e: RuntimeException) {
                 System.err.println("Failed to parse packet!")
+                System.err.println(input)
                 e.printStackTrace()
                 null
             }
