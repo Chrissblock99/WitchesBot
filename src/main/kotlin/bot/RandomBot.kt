@@ -12,10 +12,15 @@ import me.chriss99.packet.SetCards
 import me.chriss99.packet.YourTurn
 
 class RandomBot(packetHandler: PacketHandler, username: String) : Bot(packetHandler, username) {
+    var id = -1
     lateinit var cards: CardSet
 
+    override fun initGame(packet: InitGame) {
+        id = packet.players.indexOf(username)
+    }
+
     override fun setCards(packet: SetCards) {
-        if (packet.player == username)
+        if (packet.player == id)
             cards = packet.cards
     }
 
@@ -27,7 +32,6 @@ class RandomBot(packetHandler: PacketHandler, username: String) : Bot(packetHand
         packetHandler.sendPacket(PlayCard(packet.validMoves.random()))
     }
 
-    override fun initGame(packet: InitGame) {}
     override fun initTrick(packet: InitTrick) {}
     override fun cardPlayed(packet: CardPlayed) {}
 }
