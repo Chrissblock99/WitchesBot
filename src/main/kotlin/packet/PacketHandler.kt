@@ -36,5 +36,5 @@ class PacketHandler {
         (packetConsumers[packet::class]?: emptyList()).forEach { it(packet) }
     }
 
-    fun sendPacket(packet: Packet) = println(packet.serialize())
+    fun sendPacket(packet: Packet) = println(packet.serialize() + "\n")
 }
