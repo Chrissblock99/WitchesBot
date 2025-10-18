@@ -2,6 +2,7 @@ package me.chriss99.bot
 
 import me.chriss99.packet.CardPlayed
 import me.chriss99.packet.ChooseCards
+import me.chriss99.packet.EndRound
 import me.chriss99.packet.InitGame
 import me.chriss99.packet.InitTrick
 import me.chriss99.packet.Packet
@@ -21,6 +22,7 @@ abstract class Bot(val packetHandler: PacketHandler, val username: String) {
         packetHandler.addPacketConsumer(InitTrick::class, ::initTrick as (packet: Packet) -> Unit)
         packetHandler.addPacketConsumer(YourTurn::class, ::yourTurn as (packet: Packet) -> Unit)
         packetHandler.addPacketConsumer(CardPlayed::class, ::cardPlayed as (packet: Packet) -> Unit)
+        packetHandler.addPacketConsumer(EndRound::class, ::endRound as (packet: Packet) -> Unit)
         packetHandler.addPacketConsumer(Quit::class, ::quit as (packet: Packet) -> Unit)
     }
 
@@ -29,6 +31,7 @@ abstract class Bot(val packetHandler: PacketHandler, val username: String) {
     abstract fun chooseCards(packet: ChooseCards)
     abstract fun initTrick(packet: InitTrick)
     abstract fun yourTurn(packet: YourTurn)
+    abstract fun endRound(packet: EndRound)
     abstract fun cardPlayed(packet: CardPlayed)
 
     fun quit(packet: Quit) {

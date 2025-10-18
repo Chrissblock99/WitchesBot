@@ -18,6 +18,7 @@ sealed class Packet {
             "CHOOSE_CARDS" to ::ChooseCards,
             "YOUR_TURN" to ::YourTurn,
             "CARD_PLAYED" to ::CardPlayed,
+            "END_ROUND" to ::EndRound,
             "QUIT" to ::Quit
         )
 

@@ -87,6 +87,14 @@ class PacketTest {
     }
 
     @Test
+    fun endRound() {
+        val packet = """END_ROUND 1.0
+          |scores[]: 1,2,2,3
+        """.trimMargin()
+        assertEquals(packet, Packet.parse(packet).serialize())
+    }
+
+    @Test
     fun quit() {
         val packet = """QUIT 1.0
           |reason: Game ended

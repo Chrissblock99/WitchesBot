@@ -3,6 +3,7 @@ package me.chriss99.bot
 import me.chriss99.lib.CardSet
 import me.chriss99.packet.CardPlayed
 import me.chriss99.packet.ChooseCards
+import me.chriss99.packet.EndRound
 import me.chriss99.packet.InitGame
 import me.chriss99.packet.InitTrick
 import me.chriss99.packet.PacketHandler
@@ -33,5 +34,6 @@ class RandomBot(packetHandler: PacketHandler, username: String) : Bot(packetHand
     }
 
     override fun initTrick(packet: InitTrick) {}
+    override fun endRound(packet: EndRound) {}
     override fun cardPlayed(packet: CardPlayed) {}
 }
