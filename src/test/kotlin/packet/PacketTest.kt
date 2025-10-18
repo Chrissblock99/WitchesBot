@@ -16,7 +16,7 @@ class PacketTest {
     @Test
     fun passCards() {
         val packet = """PASS_CARDS 1.0
-          |cards[]: BE,Y7,F1
+          |cards[]: F1,BE,Y7
         """.trimMargin()
         assertEquals(packet, Packet.parse(packet).serialize())
     }
@@ -53,7 +53,7 @@ class PacketTest {
     fun setCards() {
         val packet = """SET_CARDS 1.0
           |player: 2
-          |cards[]: R1,GA,F4
+          |cards[]: F4,R1,GA
         """.trimMargin()
         assertEquals(packet, Packet.parse(packet).serialize())
     }
@@ -72,7 +72,7 @@ class PacketTest {
     fun yourTurn() {
         val packet = """YOUR_TURN 1.0
           |timeLeft: 234452
-          |validMoves[]: R1,R4,GA,B3,Y3,F4
+          |validMoves[]: F3,R1,R4,GA,B3,Y3
         """.trimMargin()
         assertEquals(packet, Packet.parse(packet).serialize())
     }

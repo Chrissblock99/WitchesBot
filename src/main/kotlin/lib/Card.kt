@@ -1,6 +1,10 @@
 package me.chriss99.lib
 
 enum class Card(val color: Color, val number: Int) {
+    F1(Color.FOOL, 0),
+    F2(Color.FOOL, 0),
+    F3(Color.FOOL, 0),
+    F4(Color.FOOL, 0),
     R1(Color.RED, 1),
     R2(Color.RED, 2),
     R3(Color.RED, 3),
@@ -56,19 +60,15 @@ enum class Card(val color: Color, val number: Int) {
     YB(Color.YELLOW, 11),
     YC(Color.YELLOW, 12),
     YD(Color.YELLOW, 13),
-    YE(Color.YELLOW, 14),
-    F1(Color.FOOL, 0),
-    F2(Color.FOOL, 0),
-    F3(Color.FOOL, 0),
-    F4(Color.FOOL, 0);
+    YE(Color.YELLOW, 14);
 
     val indexBit: Long = 1L shl ordinal
 
     enum class Color {
+        FOOL,
         RED,
         GREEN,
         BLUE,
-        YELLOW,
-        FOOL
+        YELLOW
     }
 }
