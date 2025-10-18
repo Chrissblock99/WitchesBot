@@ -5,9 +5,10 @@ import me.chriss99.packet.PacketHandler
 
 var shouldRun = true
 
-fun main() {
+fun main(args: Array<String>) {
     val packetHandler = PacketHandler()
-    val bot = RandomBot(packetHandler, "Chriss99")
+    val name = if (args.isEmpty()) "Chriss99" else args[0]
+    val bot = RandomBot(packetHandler, name)
 
     while (shouldRun) {
         packetHandler.takeInputLine(readln() + "\n")
