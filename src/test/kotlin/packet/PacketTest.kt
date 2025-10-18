@@ -33,6 +33,8 @@ class PacketTest {
     fun initGame() {
         val packet = """INIT_GAME 1.0
           |players[]: player1,player2,player3,player4
+          |scores[]: 0,0,0,0
+          |maxScore: 60
           |totalTime: 235647
           |timeIncrement: 24
         """.trimMargin()
@@ -43,7 +45,6 @@ class PacketTest {
     fun initTrick() {
         val packet = """INIT_TRICK 1.0
           |beginner: 1
-          |scores[]: 13,41,33,37
         """.trimMargin()
         assertEquals(packet, Packet.parse(packet).serialize())
     }
