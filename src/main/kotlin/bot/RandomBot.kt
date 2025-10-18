@@ -11,11 +11,11 @@ import me.chriss99.packet.PlayCard
 import me.chriss99.packet.SetCards
 import me.chriss99.packet.YourTurn
 
-class RandomBot(packetHandler: PacketHandler, name: String) : Bot(packetHandler, name) {
+class RandomBot(packetHandler: PacketHandler, username: String) : Bot(packetHandler, username) {
     lateinit var cards: CardSet
 
     override fun setCards(packet: SetCards) {
-        if (packet.player == name)
+        if (packet.player == username)
             cards = packet.cards
     }
 

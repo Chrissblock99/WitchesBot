@@ -12,9 +12,9 @@ import me.chriss99.packet.SetCards
 import me.chriss99.packet.YourTurn
 import me.chriss99.shouldRun
 
-abstract class Bot(val packetHandler: PacketHandler, val name: String) {
+abstract class Bot(val packetHandler: PacketHandler, val username: String) {
     init {
-        packetHandler.sendPacket(Register(name))
+        packetHandler.sendPacket(Register(username))
         packetHandler.addPacketConsumer(InitGame::class, ::initGame as (packet: Packet) -> Unit)
         packetHandler.addPacketConsumer(SetCards::class, ::setCards as (packet: Packet) -> Unit)
         packetHandler.addPacketConsumer(ChooseCards::class, ::chooseCards as (packet: Packet) -> Unit)

@@ -8,7 +8,7 @@ class PacketTest {
     @Test
     fun register() {
         val packet = """REGISTER 1.0
-          |name: player1
+          |username: player1
         """.trimMargin()
         assertEquals(packet, Packet.parse(packet).serialize())
     }
